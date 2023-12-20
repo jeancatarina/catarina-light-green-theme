@@ -1,0 +1,32 @@
+{
+  "name": "catarina-light-green-theme",
+  "displayName": "Catarina Light Green Theme",
+  "description": "another vscode theme, but light green",
+  "icon": "images/logo.jpeg",
+  "publisher": "jeancatarina",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "author": {
+    "name": "Jean Catarina",
+    "email": "jcc_ptb@hotmail.com",
+    "url": "https://linkedin.com/in/jeancatarina"
+  },
+  "repository": {
+    "url": "https://github.com/jeancatarina/catarina-light-green-theme",
+    "type": "git"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Catarina Light Green Theme",
+        "uiTheme": "vs",
+        "path": "./themes/Catarina Light Green Theme-color-theme.json"
+      }
+    ]
+  }
+}
