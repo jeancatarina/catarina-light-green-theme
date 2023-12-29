@@ -1,0 +1,27 @@
+name: Main CD Frontend
+
+on:
+  workflow_call:
+    inputs:
+      node_version:
+        type: string
+        default: 16
+
+env:
+  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+jobs:
+  build:
+    name: Build Yarn Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Visual code generate package
+        run: vsce package
+
+  deploy:
+    needs: [build]
+    name: Deploy to visual studio marketplace
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set AWS Creds
+        run: vsce publish
