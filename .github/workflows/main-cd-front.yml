@@ -29,7 +29,9 @@ jobs:
       - name: Authenticate with Personal Access Token
         env:
           VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
-        run: vsce login jeancatarina -p $VSCE_PAT
+        run: |
+          vsce login jeancatarina
+          $VSCE_PAT
       - name: Visual code generate package
         run: vsce package
 
