@@ -26,14 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm install -g vsce
 
-      - name: Authenticate with Personal Access Token
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
-        run: |
-          vsce login jeancatarina
-          Jean Catarina
-          jcc_ptb@hotmail.com
-          $VSCE_PAT
       - name: Visual code generate package
         run: vsce package
 
@@ -43,4 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set AWS Creds
-        run: vsce publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
+        run: vsce publish --pat $VSCE_PAT
