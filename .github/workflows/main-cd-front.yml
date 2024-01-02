@@ -31,6 +31,8 @@ jobs:
           VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
         run: |
           vsce login jeancatarina
+          Jean Catarina
+          jcc_ptb@hotmail.com
           $VSCE_PAT
       - name: Visual code generate package
         run: vsce package
