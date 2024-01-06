@@ -34,7 +34,10 @@ jobs:
     name: Deploy to visual studio marketplace
     runs-on: ubuntu-latest
     steps:
-      - name: Set AWS Creds
+      - name: Install dependencies
+        run: npm install -g vsce
+
+      - name: VSCE publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
         run: vsce publish --pat $VSCE_PAT
