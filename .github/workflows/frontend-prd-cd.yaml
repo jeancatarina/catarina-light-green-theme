@@ -4,3 +4,4 @@ on:
 jobs:
   continuous-deployment-main:
     uses: ./.github/workflows/main-cd-front.yml
+    secrets: inherit
