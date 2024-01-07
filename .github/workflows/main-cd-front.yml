@@ -9,6 +9,7 @@ on:
 
 env:
   GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  VSCE_TOKEN: "${{ secrets.VSCE_TOKEN }}"
 
 jobs:
   build:
@@ -39,5 +40,5 @@ jobs:
 
       - name: VSCE publish
         env:
-          VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
+          VSCE_PAT: ${{ env.VSCE_TOKEN }}
         run: vsce publish --pat $VSCE_PAT
